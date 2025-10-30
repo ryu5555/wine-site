@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>【TODO:ブランド名】公式オンラインストア | 中国ワイン正規輸入</title>
+  <style>
+    :root {
+      --bg-body: #f8f6f4;
+      --bg-card: #ffffff;
+      --text-main: #2a2a2a;
+      --text-sub: #6b6b6b;
+      --accent-dark: #3a0d0d;
+      --accent: #b81f2d;
+      --radius-lg: 1rem;
+      --radius-sm: .5rem;
+      --shadow-card: 0 20px 32px rgba(0,0,0,.07);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* HEADER / HERO */
+    header {
+      background: var(--accent-dark);
+      color: #fff;
+      padding: 2rem 1rem 3rem;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .brand-block h1 {
+      margin: 0;
+      color: #fff;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: -.03em;
+    }
+    .brand-block p {
+      margin: .5rem 0 0;
+      color: #fff;
+      opacity: .8;
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      background: rgba(255,255,255,.08);
+      padding: .6rem .9rem;
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,.16);
+    }
+
+    .hero-panel {
+      background: rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 1rem;
+      max-width: 800px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.4);
+    }
+    .hero-headline {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0 0 .5rem;
+      line-height: 1.4;
+    }
+    .hero-text {
+      color: #fff;
+      opacity: .9;
+      font-size: .95rem;
+      margin: 0 0 1rem;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: .8rem 1rem;
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
+    }
+    .cta-btn:hover {
+      filter: brightness(1.1);
+    }
+    .hero-note {
+      color: #fff;
+      font-size: .75rem;
+      opacity: .7;
+      margin-top: .6rem;
+      line-height: 1.4;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 5rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    /* SECTION TITLES */
+    .section-block {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+    .section-title {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--accent-dark);
+      letter-spacing: -.03em;
+    }
+    .section-desc {
+      margin: 0 0 2rem;
+      font-size: .9rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media(min-width: 700px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .product-img {
+      background: #ddd;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      color: #555;
+    }
+    .product-info {
+      padding: 1rem 1.2rem 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .product-name {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-main);
+      margin: 0;
+    }
+    .product-note {
+      font-size: .8rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .price-line {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+    .spec-line {
+      font-size: .8rem;
+      color: var(--text-sub);
+      line-height: 1.4;
+    }
+
+    .reserve-btn {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .8rem;
+      padding: .7rem .9rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-top: .5rem;
+    }
+    .reserve-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    /* STORY / QUALITY */
+    .twocol {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media(min-width:900px){
+      .twocol {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .mono-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 1.5rem 1.5rem 1.2rem;
+      font-size: .9rem;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+    .mono-card h3 {
+      margin: 0 0 .75rem;
+      font-size: 1rem;
+      line-height: 1.4;
+      font-weight: 600;
+      color: var(--accent-dark);
+      letter-spacing: -.03em;
+    }
+    .mono-card p {
+      margin: 0 0 .8rem;
+      font-size: .9rem;
+      color: var(--text-main);
+    }
+    .mono-card ul {
+      margin: 0 0 1rem 1rem;
+      padding: 0;
+      font-size: .85rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* CONTACT FORM */
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 480px;
+    }
+    label {
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: grid;
+      gap: .4rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: .8rem .9rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #bbb;
+      font-size: .9rem;
+      font-family: inherit;
+      line-height: 1.4;
+      background: #fff;
+    }
+    button[type="submit"] {
+      background: var(--accent);
+      border: 0;
+      border-radius: var(--radius-sm);
+      padding: .8rem 1rem;
+      font-size: .9rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      filter: brightness(1.1);
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item h4 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+      margin: 0 0 .4rem;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: .8rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1b1b1b;
+      color: #cfcfcf;
+      font-size: .8rem;
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-inner p {
+      margin: 0 0 .8rem;
+      color: #cfcfcf;
+    }
+    .footer-inner a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .legal-note {
+      color: #9a9a9a;
+      font-size: .7rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand-block">
+      <h1>【TODO:ブランド名】公式オンラインストア</h1>
+      <p>中国で丁寧に造られたワインを正規輸入し、日本のみなさまへ。<br>
+         限定ロットの先行案内・予約受付中。</p>
+    </div>
+
+    <nav>
+      <a href="#products">商品一覧</a>
+      <a href="#story">ワインの背景</a>
+      <a href="#quality">安心・品質</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="hero-panel">
+      <p class="hero-headline">
+        数量限定ロットを先行公開中。<br>
+        日本ではまだほとんど流通していない中国産ワイン。
+      </p>
+      <p class="hero-text">
+        「中国のワインって正直どうなの？」と思った方へ。<br>
+        現地で実際にテイスティングし、これは伝えたいと思ったボトルだけを輸入しました。<br>
+        まずはクラウドファンディング支援者さま・事前予約の方向けにご案内しています。
+      </p>
+      <a class="cta-btn" href="【TODO:クラファンURL】" target="_blank" rel="noopener">
+        クラファンで支援・予約する ▶
+      </a>
+      <div class="hero-note">
+        ※ 本ストアは予約受付・紹介を目的としたページです。<br>
+        ※ 酒類の一般販売は通信販売の免許取得後に開始します。
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="section-block">
+    <h2 class="section-title">商品ラインナップ</h2>
+    <p class="section-desc">
+      ワインはすべて正規ルートで日本国内に輸入・保管しています。<br>
+      まずは限定本数のみ、先行でご紹介します。
+    </p>
+
+    <div class="product-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+        <div class="product-img">
+          画像：赤ワイン（images/red1.jpg）
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">【TODO:ワイン名・赤】</h3>
+          <p class="product-note">
+            フルボディ寄りの赤。濃いベリー、ほのかなスパイス。<br>
+            肉料理・焼き肉・中華系のしっかりした味付けと相性◎
+          </p>
+          <div class="price-line">参考価格：¥【TODO:価格】 / 750ml</div>
+          <div class="spec-line">アルコール度数：TODO:%　/　産地：TODO:産地名</div>
+
+          <a class="reserve-btn" href="#contact">
+            予約・仕入れ相談する
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          画像：白ワイン（images/white1.jpg）
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">【TODO:ワイン名・白】</h3>
+          <p class="product-note">
+            フルーティーな白。洋梨・白い花のアロマ、やさしい酸。<br>
+            アジア系の前菜、魚、蒸し料理に合わせやすい1本。
+          </p>
+          <div class="price-line">参考価格：¥【TODO:価格】 / 750ml</div>
+          <div class="spec-line">アルコール度数：TODO:%　/　産地：TODO:産地名</div>
+
+          <a class="reserve-btn" href="#contact">
+            予約・仕入れ相談する
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          画像：ギフトセット（images/set.jpg）
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">先行限定 3本セット</h3>
+          <p class="product-note">
+            赤/白/もう1本の飲み比べセット。<br>
+            自分用＋プレゼント用にも。数量かなり少なめ。
+          </p>
+          <div class="price-line">クラファン限定：¥【TODO:価格】 / 3本セット</div>
+          <div class="spec-line">本数限定：【TODO:本数】セットのみ</div>
+
+          <a class="reserve-btn" href="【TODO:クラファンURL】" target="_blank" rel="noopener">
+            クラファンで申し込む ▶
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STORY & QUALITY -->
+  <section id="story" class="twocol">
+    <div class="mono-card">
+      <h3>なぜ中国ワイン？</h3>
+      <p>
+        中国ワインは今どんどん品質が上がっていて、国際コンペでの受賞も増えています。
+        でも日本ではまだ知られていない・ほとんど流通していないのが現実です。
+      </p>
+      <p>
+        私たちは現地でテイスティングし、「これは日本の食卓に合う」「この価格帯でこの味は正直すごい」というボトルだけを選びました。
+      </p>
+      <p>
+        まだ誰も知らないうちに楽しめる、それがこのプロジェクトの一番の価値です。
+      </p>
+    </div>
+
+    <div id="quality" class="mono-card">
+      <h3>安心と品質管理</h3>
+      <ul>
+        <li>正規ルートで輸入し、税関手続き済み</li>
+        <li>国内では温度管理された環境で保管</li>
+        <li>日本の法令に沿ったラベル（アルコール度数や原産地）を表示予定</li>
+      </ul>
+      <p>
+        安心して楽しんでいただけるよう、流通と保管の透明性を大切にしています。
+      </p>
+      <p style="font-size:.8rem; color:var(--text-sub); line-height:1.4;">
+        ※ 現在、通信販売用の酒類販売免許を準備中です。<br>
+        ※ 一般消費者向けの正式なオンライン販売は免許取得後に開始します。
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-block">
+    <h2 class="section-title">お問い合わせ・事前予約</h2>
+    <p class="section-desc">
+      レストラン/バーでの取り扱い相談、先行ロットの確保、一般の方の質問など<br>
+      下記フォームからお気軽にご連絡ください。<br>
+      （送信すると、お使いのメールソフトが開きます）
+    </p>
+
+    <form action="mailto:【TODO:あなたの連絡用メールアドレス】" method="post" enctype="text/plain">
+      <label>
+        お名前 / 店名
+        <input name="name" placeholder="例）ワインバー○○／山田様" required />
+      </label>
+
+      <label>
+        メールアドレス
+        <input type="email" name="email" placeholder="you@example.com" required />
+      </label>
+
+      <label>
+        ご用件
+        <textarea name="message" rows="5" placeholder="例）赤ワインを3本予約したい／業務用で仕入れたい／発送予定日を知りたいなど"></textarea>
+      </label>
+
+      <button type="submit">送信する</button>
+    </form>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section-block">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-item">
+      <h4>今すぐ買えますか？</h4>
+      <p>
+        現在は先行案内・予約の段階です。クラウドファンディング経由、または事前予約の形でお申し込みいただけます。
+        一般向けの正式なオンライン販売は、通信販売の酒類販売免許取得後に開始します。
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h4>いつ届きますか？</h4>
+      <p>
+        【TODO:発送時期の目安（例：クラファン終了後◯〜◯週間以内）】を目標としています。
+        具体的なスケジュールは事前にメールでご案内します。
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h4>アルコール度数は？辛口？甘口？</h4>
+      <p>
+        各商品のアルコール度数・味わいは商品欄に記載しています。<br>
+        「渋みしっかり系がいい」「甘めがいい」なども遠慮なくお問い合わせください。
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h4>違法じゃないの？</h4>
+      <p>
+        当プロジェクトは正規輸入されたワインを、クラウドファンディングおよび事前予約という形でご案内しています。
+        通信販売での一般向け販売は、酒類販売免許の取得後に行います。
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h4>破損して届いた場合は？</h4>
+      <p>
+        破損・液漏れなど初期不良があった場合は、到着後【TODO:◯日】以内に写真を添えてご連絡ください。
+        状況を確認のうえ、交換または返金の対応を検討いたします。
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>
+      【TODO:ブランド名 / プロジェクト名】<br>
+      運営：【TODO:屋号・会社名】<br>
+      代表：【TODO:氏名】<br>
+      お問い合わせ：<a href="mailto:【TODO:メールアドレス】">【TODO:メールアドレス】</a>
+    </p>
+
+    <div class="legal-note">
+      本サイトは中国産ワインの正規輸入プロジェクト紹介と、先行予約/仕入れ相談の受付を目的としています。<br>
+      一般消費者向けの通信販売は、酒類販売免許の取得後に開始します。<br>
+      20歳未満の方への酒類の販売・提供はできません。
+    </div>
+
+    <div class="legal-note">
+      © 【TODO:年】 【TODO:ブランド名】 All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
